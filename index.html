@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>كوين هوم</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1B2A41; --bg2:#1B2A41;
+  --card:#1B2A41;
+  --line:rgba(201,162,77,.5);
+  --text:#F5EFE6; --muted:#E8DCC8;
+  --gold:#C9A24D; --gold2:#E3C778;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+<!--  body{background:linear-gradient(F5EFE6,#1B2A41 0%,#C9A24D 40%,#E8DCC8 100%) no-repeat; -->
+  body{background:#F5EFE6;color:var(--text);font-family:'Cairo','Tajawal',Tahoma,sans-serif;min-height:100vh;padding:26px 18px 40px}
+  color:var(--text);font-family:'Cairo','Tajawal',Tahoma,sans-serif;min-height:100vh;padding:26px 18px 40px}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.14;
+  background:var(--pat,none) top left/220px repeat}
+.wrap{max-width:440px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.logo{width:132px;height:132px;border-radius:50%;margin:0 auto 14px;display:block;object-fit:cover;
+  box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--gold),0 10px 40px rgba(226,204,107,.3)}
+<!-- h1{font-size:28px;font-weight:800;color:var(--gold)}
+.sub{color:var(--muted);font-size:14px;margin:4px 0 22px}
+.sec{color:#fff;text-shadow:0 1px 8px rgba(46,22,81,.7)} -->
+h1{font-size:28px;font-weight:800;color:#1B2A41}
+.sub{color:#1B2A41;font-size:14px;margin:4px 0 22px}
+.sec{color:#1B2A41;text-shadow:none}
+.btn{display:flex;align-items:center;gap:12px;width:100%;padding:15px 16px;margin-bottom:10px;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;color:var(--text);
+  text-decoration:none;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-align:right;
+  transition:transform .15s,border-color .15s}
+.btn:active{transform:scale(.98)}
+.btn:hover{border-color:var(--gold)}
+.ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;background:#E8DCC8;color:#1B2A41;flex:none}
+  background:var(--gold);color:var(--bg);flex:none}
+.btn small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.btn small.ltr{direction:ltr;text-align:right}
+.arrow{margin-inline-start:auto;color:var(--gold);font-size:18px}
+<!-- .primary{background:var(--gold);color:#C9A24D;border:0}
+.primary .ic{background:var(--bg);color:var(--gold)}
+.primary .arrow{color:#C9A24D}
+<!-- .primary{background:#E8DCC8;color:#1B2A41;border:1px solid #1B2A41}
+.primary .ic{background:#1B2A41;color:#C9A24D}
+.primary .arrow{color:#1B2A41} -->
+.pay{border-color:var(--gold)}
+.copy{justify-content:center;font-size:14px;padding:11px 16px}
+[hidden]{display:none!important}
+.sheet{position:fixed;inset:0;z-index:10;display:flex;align-items:flex-end;justify-content:center}
+.sheet-bg{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.sheet-box{position:relative;width:100%;max-width:480px;background:var(--bg);border:1px solid var(--line);border-bottom:0;
+  border-radius:22px 22px 0 0;padding:20px 18px calc(18px + env(safe-area-inset-bottom,0px));text-align:center}
+.sheet-title{color:var(--gold);font-weight:600;font-size:14px}
+.big{direction:ltr;font-size:30px;font-weight:800;margin:6px 0 16px;letter-spacing:1px}
+.close{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;padding:8px;cursor:pointer}
+@media (min-width:700px){.sheet{align-items:center}.sheet-box{border-radius:22px;border-bottom:1px solid var(--line)}}
+.toast{position:fixed;inset-inline:0;bottom:calc(24px + env(safe-area-inset-bottom,0px));margin:auto;width:max-content;max-width:90%;
+  background:var(--gold);color:#2e1651;padding:10px 20px;border-radius:999px;font-weight:700;font-size:14px;text-align:center;
+  opacity:0;transform:translateY(20px);transition:.25s;pointer-events:none;z-index:5}
+.toast.show{opacity:1;transform:none}
+footer{background:#1B2A41;border:1px solid rgba(201,162,77,.5);border-radius:16px;padding:14px;color:#E8DCC8}
+footer b{color:#C9A24D}
+@media (min-width:700px){body{padding-top:56px}.wrap{max-width:480px}.logo{width:150px;height:150px}}
+.ic img{width:22px;height:22px;object-fit:contain}
+.ic.plain{background:}
+.ic.plain img{width:38px;height:38px}
+.arrow{display:none}
+.btn.primary{background:var(--card);color:var(--text);border:1px solid var(--line)}
+.btn.primary .ic{background:#E8DCC8;color:#1B2A41}
+.btn.primary .arrow{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" id="logo" alt="" src="">
+  <h1 id="name"></h1>
+  <p class="sub" id="tagline"></p>
+
+  <a class="btn primary" id="wa" target="_blank" rel="noopener">
+    <span class="ic"><img src="icons/WhatsApp.svg" alt=""></span><span>كلمنا على واتساب</span><span class="arrow">‹</span></a>
+  <div id="calls"></div>
+
+<!--  <div class="sec">تابعنا</div>
+  <a class="btn" id="fb" target="_blank" rel="noopener"><span class="ic"><img src="icons/facebook.svg" alt=""></span>فيسبوك<span class="arrow">‹</span></a>
+  <a class="btn" id="tt" target="_blank" rel="noopener" hidden><span class="ic"><img src="icons/Tiktok.svg" alt=""></span>تيك توك<span class="arrow">‹</span></a> -->
+
+<!--  <div class="sec">الدفع</div> -->
+<!--  <a class="btn pay" id="vcash" role="button">
+    <span class="ic"><img src="icons/vodafone.svg" alt=""></span><span>فودافون كاش: اضغط لنسخ الرقم<small class="ltr" id="vcashNum"></small></span><span class="arrow">‹</span></a> -->
+  <a class="btn pay" id="vcash" role="button">
+    <span class="ic"><img src="icons/vodafone.svg" alt=""></span><span><span id="vcashTitle">فودافون كاش</span><small class="ltr" id="vcashSub"></small></span><span class="arrow">‹</span></a>
+<!--  <button class="btn copy" id="copyVcash" type="button" hidden>نسخ رقم فودافون كاش <span class="ltr" id="vcashNumTxt"></span></button>	-->
+  <a class="btn pay" id="pay" role="button">
+    <span class="ic"><img src="icons/InstaPay.svg" alt=""></span><span><span id="payTitle">InstaPay</span><small id="paySub"></small></span><span class="arrow" id="payArrow">‹</span></a>
+  <button class="btn copy" id="copyNum" type="button" hidden>Copy number <span class="ltr" id="numTxt"></span></button>
+
+  <footer>
+    <div>© <span id="year">2026</span> جميع الحقوق محفوظة.</div>
+    <div><b id="agency"></b></div>
+  </footer>
+</div>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-bg" id="sheetBg"></div>
+  <div class="sheet-box">
+    <p class="sheet-title">اتصل بنا</p>
+    <div class="big" id="sheetNum"></div>
+    <a class="btn primary" id="sheetCall"><span class="ic"><img src="icons/phonecall.svg" alt=""></span><span>اتصال الآن</span></a>
+    <button class="btn" id="sheetCopy" type="button"><span class="ic">⧉</span><span>نسخ الرقم</span></button>
+    <button class="close" id="sheetClose" type="button">إغلاق</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   إعدادات الصفحة: غيّر القيم اللي تحت بس، وماتلمسش باقي الكود
+   ============================================================ */
+const CONFIG = {
+  name:     "كوين هوم",
+  tagline:  "للنجف و مستلزمات الاضاءة",
+
+  // الصور: حط اسم الملف (بجوار index.html) أو لينك كامل. سيب pattern فاضي "" لو مش عايز باترن
+  logo:     "logo.jpg",
+  pattern:  "pattern.jpg",
+
+  whatsapp: "https://wa.me/201067115744",
+  phones:   ["01067115744"],              // رقم زرار الاتصال
+// instagram:"https://www.instagram.com/om_el_noor_orthodox_vestments/",
+// facebook: "https://www.facebook.com/share/1DxQhsq7QA/?mibextid=wwXIfr",
+// tiktok:   "https://www.tiktok.com/@om_elnoor_vestments",                         // حط لينك تيك توك هنا، وسيبه فاضي لو مش عايزه يظهر
+
+//  vodafoneNumber: "01067115744",
+  instapayNumber: "01067115744",        // الرقم اللي بيتنسخ
+  instapayLink:   "https://ipn.eg/S/mina_nos/instapay/2pMDlY",                   // لينك الدفع من تطبيق إنستاباي (لو فاضي الزرار بينسخ الرقم)
+  vodafonecashLink: "https://vf.eg/vfcash?id=mt&qrId=EPmpuS",
+
+  agency:   "Pro Media Marketing Agency"
+};
+/* ============================================================ */
+
+const $ = id => document.getElementById(id);
+const toast = $('toast');
+function say(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}
+async function copy(t){
+  try{await navigator.clipboard.writeText(t)}catch(e){
+    try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}catch(_){}
+  }
+}
+
+document.title = CONFIG.name + " - " + CONFIG.tagline;
+$('name').textContent = CONFIG.name;
+$('tagline').textContent = CONFIG.tagline;
+// $('fname').textContent = CONFIG.name;
+$('agency').textContent = CONFIG.agency;
+$('year').textContent = new Date().getFullYear();
+$('logo').src = CONFIG.logo; $('logo').alt = "شعار " + CONFIG.name;
+if (CONFIG.pattern) document.body.style.setProperty('--pat', 'url("' + CONFIG.pattern + '")');
+
+$('wa').href = CONFIG.whatsapp;
+// $('ig').href = CONFIG.instagram;
+// $('fb').href = CONFIG.facebook;
+if (CONFIG.tiktok) { $('tt').href = CONFIG.tiktok; $('tt').hidden = false; }
+
+
+// ---------- الاتصال ----------
+const isMobile = matchMedia('(hover: none) and (pointer: coarse)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const telOf = p => 'tel:' + p.replace(/\s+/g,'').replace(/^0/, '+20');
+let sheetPhone = '';
+function openSheet(p){
+  sheetPhone = p;
+  $('sheetNum').textContent = p;
+  $('sheetCall').href = telOf(p); $('sheetCall').hidden = !isMobile;
+  $('sheet').hidden = false;
+}
+function closeSheet(){ $('sheet').hidden = true; }
+$('sheetBg').addEventListener('click', closeSheet);
+$('sheetClose').addEventListener('click', closeSheet);
+$('sheetCopy').addEventListener('click', async () => { await copy(sheetPhone); say('تم نسخ الرقم ✓'); });
+
+CONFIG.phones.forEach(p => {
+  const a = document.createElement('a');
+  a.className = 'btn';
+  a.href = telOf(p);
+  a.innerHTML = '<span class="ic"><img src="icons/phonecall.svg" alt=""></span><span>اتصل بنا <small class="ltr"></small></span><span class="arrow">‹</span>';
+  a.querySelector('small').textContent = p;
+  a.addEventListener('click', e => {
+    if (!isMobile) { e.preventDefault(); openSheet(p); return; }
+    let left = false; const mark = () => { left = true; };
+    document.addEventListener('visibilitychange', mark, {once:true});
+    window.addEventListener('pagehide', mark, {once:true});
+    window.addEventListener('blur', mark, {once:true});
+    setTimeout(() => { if (!left) openSheet(p); }, 900);
+  });
+  $('calls').appendChild(a);
+});
+
+
+ // ---------- فودافون كاش ----------
+// if (CONFIG.vodafoneNumber) {
+//  $('vcashNum').textContent = CONFIG.vodafoneNumber;
+//  $('vcash').addEventListener('click', async e => {
+//    e.preventDefault(); await copy(CONFIG.vodafoneNumber);
+//    say('تم نسخ الرقم ✓ افتح فودافون كاش وحوّل');
+//  });
+//} else {
+//  $('vcash').hidden = true;
+// }
+
+// $('phoneTxt').textContent = CONFIG.phone;
+// $('call').href = 'tel:' + CONFIG.phone.replace(/\s+/g,'').replace(/^0/, '+20');
+
+// موبايل = بيفتح الاتصال مباشرة. لو ماحصلش حاجة، بتظهر نافذة فيها الرقم وزرار اتصال ونسخ. كمبيوتر = النافذة بس
+// const isMobile = matchMedia('(hover: none) and (pointer: coarse)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+// const telHref = $('call').href;
+// function openSheet(){
+  // $('sheetNum').textContent = CONFIG.phone;
+  // $('sheetCall').href = telHref; $('sheetCall').hidden = !isMobile;
+  // $('sheet').hidden = false;
+// }
+// function closeSheet(){ $('sheet').hidden = true; }
+// $('sheetBg').addEventListener('click', closeSheet);
+// $('sheetClose').addEventListener('click', closeSheet);
+// $('sheetCopy').addEventListener('click', async () => { await copy(CONFIG.phone); say('تم نسخ الرقم ✓'); });
+// $('call').addEventListener('click', e => {
+//   if (!isMobile) { e.preventDefault(); openSheet(); return; }
+//   let left = false; const mark = () => { left = true; };
+//   document.addEventListener('visibilitychange', mark, {once:true});
+//   window.addEventListener('pagehide', mark, {once:true});
+//   window.addEventListener('blur', mark, {once:true});
+//   setTimeout(() => { if (!left) openSheet(); }, 900);
+// });
+
+
+// ---------- فودافون كاش ----------
+const vc = $('vcash');
+if (CONFIG.vodafonecashLink) {
+  vc.href = CONFIG.vodafonecashLink; vc.target = '_blank'; vc.rel = 'noopener';
+  $('vcashTitle').textContent = 'ادفع بـ فودافون كاش';
+  $('vcashSub').className = '';
+//  $('vcashSub').textContent = 'هيفتحلك التطبيق';
+  if (CONFIG.vodafoneNumber) {
+    $('vcashNumTxt').textContent = CONFIG.vodafoneNumber;
+    $('copyVcash').hidden = false;
+    $('copyVcash').addEventListener('click', async () => { await copy(CONFIG.vodafoneNumber); say('تم نسخ الرقم ✓'); });
+    if (!isMobile) {
+      vc.addEventListener('click', async e => {
+        e.preventDefault(); await copy(CONFIG.vodafoneNumber);
+        say('فودافون كاش بيشتغل من الموبايل. تم نسخ الرقم ✓');
+      });
+    }
+  }
+} else if (CONFIG.vodafoneNumber) {
+  $('vcashTitle').textContent = 'فودافون كاش: اضغط لنسخ الرقم';
+  $('vcashSub').textContent = CONFIG.vodafoneNumber;
+  vc.addEventListener('click', async e => {
+    e.preventDefault(); await copy(CONFIG.vodafoneNumber);
+    say('تم نسخ الرقم ✓ افتح فودافون كاش وحوّل');
+  });
+} else {
+  vc.hidden = true;
+}
+
+const pay = $('pay');
+if (CONFIG.instapayLink) {
+  pay.href = CONFIG.instapayLink; pay.target = '_blank'; pay.rel = 'noopener';
+  $('payTitle').textContent = 'ادفع بـ InstaPay';
+  $('paySub').textContent = 'هيفتحلك التطبيق';
+  $('numTxt').textContent = CONFIG.instapayNumber;
+  $('copyNum').hidden = false;
+  if (!isMobile) {
+    pay.addEventListener('click', async e => {
+      e.preventDefault(); await copy(CONFIG.instapayNumber);
+      say('إنستاباي بيشتغل من الموبايل. تم نسخ الرقم ✓');
+    });
+  }
+  $('copyNum').addEventListener('click', async () => { await copy(CONFIG.instapayNumber); say('تم نسخ الرقم ✓'); });
+} else {
+  $('payTitle').textContent = 'InstaPay: اضغط لنسخ الرقم';
+  $('paySub').textContent = CONFIG.instapayNumber;
+  $('paySub').className = 'ltr';
+  $('payArrow').textContent = '⧉';
+  pay.addEventListener('click', async e => { e.preventDefault(); await copy(CONFIG.instapayNumber); say('تم نسخ الرقم ✓ افتح إنستاباي وابعت له'); });
+}
+</script>
+</body>
+</html>
